@@ -29,6 +29,7 @@ appCliente.controller("clienteController", function($scope, $http){
 		    //$scope.clientes.push(response.data);
 			$scope.carregarClientes();
 			$scope.cliente={};
+			$scope.frmCliente.$setPristine(true);
 		    console.log(response.data);
 		    console.log(response.status);
 		  }, function errorCallback(response) {
