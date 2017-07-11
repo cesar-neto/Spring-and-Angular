@@ -19,24 +19,25 @@ appCliente.controller("clienteController", function($scope, $http){
 	};
 	
 	$scope.carregarClientes();
-		
+	
 	$scope.salvarCliente = function(){
 		$http({
-		  method: 'POST',
-		  url: 'http://localhost:8080/clientes/',
-		  data: $scope.cliente
-		}).then(function successCallback(response) {
-		    //$scope.clientes.push(response.data);
-			$scope.carregarClientes();
-			$scope.cliente={};
-			$scope.frmCliente.$setPristine(true);
-		    console.log(response.data);
-		    console.log(response.status);
-		  }, function errorCallback(response) {
-			  console.log(response.data);
-			  console.log(response.status);
-		  });
-	};
+			  method: 'POST',
+			  url: 'http://localhost:8080/clientes/',
+			  data: $scope.cliente
+			}).then(function successCallback(response) {
+			    //$scope.clientes.push(response.data);
+				$scope.carregarClientes();
+				$scope.cliente={};
+			    console.log(response.data);
+			    console.log(response.status);
+			  }, function errorCallback(response) {
+				  console.log(response.data);
+				  console.log(response.status);
+			  });
+		};
+	
+	
 	
 	$scope.excluirCliente = function(cliente){
 		$http({
