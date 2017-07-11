@@ -16,7 +16,6 @@ Oi kk {{cliente.nome}}<br/>
 			<span ng-show="frmCliente.txtEmailCliente.$error.email">Campo email Inválido</span>
 		</div>
 		<div ng-controller="estadoController">
-		{{cliente}}
 			<label>Estado: </label>
 			
 			<select ng-model="cliente.estado">
@@ -24,6 +23,8 @@ Oi kk {{cliente.nome}}<br/>
 		    </select>
 			
 		</div>
+		
+		{{cliente.estado}}
 		{{cliente}}
 		<input type="button" value="Salvar" ng-click="salvarCliente()" ng-disabled="frmCliente.$invalid"/>
 		<input type="button" value="Cancelar" ng-click="cancelarEdicao()" ng-disabled="frmCliente.$invalid"/>

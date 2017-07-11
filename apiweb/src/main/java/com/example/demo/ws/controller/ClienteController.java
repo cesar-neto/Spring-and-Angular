@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Cliente;
 import com.example.demo.ws.service.ClienteService;
-
+				//tudo que passar por /admin irá ser verificado no filtro de segurança
 @RestController
+@RequestMapping("/admin")
 public class ClienteController {
 	
 	@Autowired
@@ -28,7 +29,6 @@ public class ClienteController {
 	@RequestMapping(method = RequestMethod.POST, value = "/clientes", consumes = MediaType.APPLICATION_JSON_VALUE)
 
 	public ResponseEntity<Cliente> cadastrarCliente(@RequestBody Cliente cliente) {
-		// System.out.println("CHAMOU!!!");
 		Cliente clienteCadastrado = clienteService.cadastrar(cliente);
 		return new ResponseEntity<>(clienteCadastrado, HttpStatus.CREATED);
 

@@ -17,7 +17,7 @@ public class Cliente {
 	private String email;
 	
 	@JoinColumn
-	@ManyToOne
+	@OneToOne
 	private Estado estado;
 	
 	
