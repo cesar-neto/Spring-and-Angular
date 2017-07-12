@@ -16,6 +16,7 @@
 <script src="./js/controller/cidade-controller.js"></script>
 <script src="./js/controller/estado-controller.js"></script>
 <script src="./js/controller/login-controller.js"></script>
+<script src="./js/interceptor/token-interceptor.js"></script>
 </head>
 <body ng-controller="mainController">
 
@@ -25,11 +26,14 @@
 <a href="/cidades">Cidades</a>
 <a href="/estados">Estados</a>
 <a href="/login">Login</a>
-<div ng-view="ng-view"></div>
+
 <br/>
 Path: {{$location.path()}}
 Template URL: {{$route.current.templateUrl}}
 Parametros: {{$routeParams}}
-		
+
+
+<br/>
+<div ng-view="ng-view"></div>		
 </body>
 </html>

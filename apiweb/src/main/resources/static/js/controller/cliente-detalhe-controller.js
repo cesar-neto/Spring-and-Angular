@@ -2,7 +2,7 @@ appCliente.controller("clienteDetalheController", function($scope, $routeParams,
 
 	$scope.cliente = {};
 	
-	$http.get("/clientes/"+$routeParams.clienteId).then(function(response){
+	$http.get("admin/clientes/"+$routeParams.clienteId).then(function(response){
 		
 		$scope.cliente = response.data;
 	}),(function(response){
