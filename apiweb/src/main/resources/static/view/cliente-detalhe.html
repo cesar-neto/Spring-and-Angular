@@ -1,16 +1,26 @@
 <div ng-controller="clienteDetalheController">
-
-	Detalhes do cliente <br/>
 	
-	Nome: {{cliente.nome}}
-	<br/>
-	Id: {{cliente.id}}
-	<br/>
-	Email: {{cliente.email}}
-	<br/>
-	Estado: {{cliente.estado}}
+	<form class="form-horizontal">
+	<fieldset>
 	
+	<!-- Form Name -->
+	<legend>Detalhes do cliente</legend>
 	
-
-
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="nome">Nome: {{cliente.nome}}	</label>
+	</div>
+	
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="id">Id: {{cliente.id}}</label>
+	</div>
+	
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="Email">Email: {{cliente.email}}</label>
+	</div>
+	
+	</fieldset>
+	</form>
 </div>

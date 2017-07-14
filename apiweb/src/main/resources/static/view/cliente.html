@@ -1,25 +1,41 @@
+
 <div ng-controller="clienteController">
-Oi kk {{cliente.nome}}<br/>
+	<form class="form-horizontal" name="frmCliente">
+	<fieldset>
 	
-	<form novalidate" name="frmCliente">
-		<div>
-			<label>Nome: </label>
-			<input type="text" ng-minlength="4" name="txtNomeCliente" ng-model="cliente.nome" required/>
-			<span ng-show="frmCliente.txtNomeCliente.$error.required && frmCliente.txtNomeCliente.$dirty">Campo nome obrigatório</span>
-			<span ng-show="frmCliente.txtNomeCliente.$error.minlength">Campo nome com no minimo 4 letras</span>
-		</div>
-		
-		<div>
-			<label>Email: </label>
-			<input type="email" name="txtEmailCliente" ng-model="cliente.email" required/>
-			<span ng-show="frmCliente.txtEmailCliente.$error.required && frmCliente.txtEmailCliente.$dirty">Campo email obrigatório</span>
-			<span ng-show="frmCliente.txtEmailCliente.$error.email">Campo email Inválido</span>
-		</div>
-		
-		
-		
-		<input type="button" value="Salvar" ng-click="salvarCliente()" ng-disabled="frmCliente.$invalid"/>
-		<input type="button" value="Cancelar" ng-click="cancelarEdicao()" ng-disabled="frmCliente.$invalid"/>
+	<!-- Form Name -->
+	<legend>Cadastro de Cliente</legend>
+	
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="nome">Nome</label>
+	  <div class="controls">
+	    <input id="nome" type="text" placeholder="Digite seu nome" class="input-large" ng-minlength="4" name="txtNomeCliente" ng-model="cliente.nome" required>
+	    <span ng-show="frmCliente.txtNomeCliente.$error.required && frmCliente.txtNomeCliente.$dirty">Campo nome obrigatório</span>
+		<span ng-show="frmCliente.txtNomeCliente.$error.minlength">Campo nome com no minimo 4 letras</span>
+	  </div>
+	</div>
+	
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="Email">E-mail</label>
+	  <div class="controls">
+	    <input id="Email" type="email" placeholder="Digite seu e-mail" name="txtEmailCliente" ng-model="cliente.email" required>
+	    <span ng-show="frmCliente.txtEmailCliente.$error.required && frmCliente.txtEmailCliente.$dirty">Campo email obrigatório</span>
+		<span ng-show="frmCliente.txtEmailCliente.$error.email">Campo email Inválido</span>
+	  </div>
+	</div>
+	
+	<!-- Button -->
+	<div class="control-group">
+	  <label class="control-label" for="enviar"></label>
+	  <div class="controls">
+	    <button id="enviar" name="enviar" class="btn btn-primary" value="Salvar" ng-click="salvarCliente()" ng-disabled="frmCliente.$invalid">Enviar</button>
+	    <button id="cancelar" name="cancelar" class="btn btn-primary" value="Cancelar" ng-click="cancelarEdicao()" ng-disabled="frmCliente.$invalid">Cancelar</button>
+	  </div>
+	</div>
+	
+	</fieldset>
 	</form>
 	
 	<div ng-repeat="cli in clientes">
@@ -29,4 +45,8 @@ Oi kk {{cliente.nome}}<br/>
 		<input type="button" value="Editar" ng-click="editarCliente(cli)" />
 		<a href="/clientes/{{cli.id}}">Detalhes</a>
 	</div>
+	
 </div>
+
+
+

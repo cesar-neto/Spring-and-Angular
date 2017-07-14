@@ -49,6 +49,8 @@ appCliente.controller("clienteController", function($scope, $http){
 		  url: 'http://localhost:8080/admin/clientes/'+cliente.id
 		}).then(function successCallback(response) {
 		    $scope.clientes.splice(cliente.id-1,1);
+		    $scope.carregarClientes();
+			$scope.cliente={};
 		    console.log(response.data);
 		    console.log(response.status);
 		  }, function errorCallback(response) {
