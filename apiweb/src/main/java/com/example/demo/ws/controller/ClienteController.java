@@ -16,9 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Cliente;
 import com.example.demo.ws.service.ClienteService;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 				//tudo que passar por /admin irá ser verificado no filtro de segurança
 @RestController
 @RequestMapping("/admin")
+@Api(value="ClientesControllerAPI", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ClienteController {
 	
 	@Autowired
@@ -35,7 +42,8 @@ public class ClienteController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/clientes", produces = MediaType.APPLICATION_JSON_VALUE)
-
+	@ApiOperation("Gets the existing clientes")
+	@ApiResponses(value={@ApiResponse(code=200, message="ok", response=Cliente.class)})
 	public ResponseEntity<Collection<Cliente>> buscarTodosClientes() {
 
 		Collection<Cliente> clientesBuscados = clienteService.buscarTodos();
