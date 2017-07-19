@@ -4,19 +4,19 @@
 <link rel="stylesheet" href="css/form.css" />
 
 
-<div ng-controller="loginController">
+<div ng-controller="registroController">
 
 
 	<div class="form-style-8">
-		<h2>Login to your account</h2>
+		<h2>Create a new account</h2>
 		<form>
 			<input type="text" name="field1" placeholder="User Name"
-				ng-model="usuario.nome" /> <input type="password" name="field2"
+				ng-model="usuario.nome" /> 
+			<input type="password" name="field2"
 				placeholder="Password" ng-model="usuario.senha" /> <input
-				type="button" value="Login" ng-click="autenticar()" />
+				type="button" value="Sign in" ng-click="cadastrar()" />
 		</form>
 	</div>
 
-	Token: {{token}}
-</div>
 
+</div>

@@ -18,15 +18,21 @@ import com.example.demo.ws.service.UsuarioService;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
+@Api(value="LoginControllerAPI", produces = MediaType.APPLICATION_JSON_VALUE)
 public class LoginController {	
 	
 	@Autowired
 	UsuarioService usuarioService;
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/autenticar", consumes = MediaType.APPLICATION_JSON_VALUE)
-
+	@ApiOperation("A token will be generated as soon as the user authenticates")
+	@ApiResponses(value={@ApiResponse(code=200, message="ok", response=Usuario.class)})
 	public MyToken autenticar(@RequestBody Usuario usuario) throws ServletException {
 		
 		if(usuario.getNome() == null || usuario.getSenha() == null){
