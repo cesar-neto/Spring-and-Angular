@@ -7,7 +7,7 @@ appCliente.controller("clienteController", function($scope, $http){
 	$scope.carregarClientes = function(){
 		
 		token = localStorage.getItem("userToken");
-		//$http.defaults.headers.common.Authorization = "Bearer "+token;
+		$http.defaults.headers.common.Authorization = "Bearer "+token;
 		
 		$http({
 		  method: 'GET',
