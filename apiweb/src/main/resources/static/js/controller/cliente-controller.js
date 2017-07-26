@@ -4,6 +4,8 @@ appCliente.controller("clienteController", function($scope, $http){
 	$scope.clientes = [];
 	$scope.cliente = {};
 	
+	
+	
 	$scope.carregarClientes = function(){
 		
 		token = localStorage.getItem("userToken");

@@ -1,5 +1,5 @@
 //criacao do modulo principal da aplicacao
-var appCliente = angular.module("appCliente", ['ngRoute']);
+var appCliente = angular.module("appCliente", ['ngRoute','ngTagsInput']);
 
 appCliente.config(function($routeProvider, $locationProvider){
 	

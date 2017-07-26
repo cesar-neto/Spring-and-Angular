@@ -1,7 +1,18 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'
 	rel='stylesheet' type='text/css'>
+	
 <link rel="stylesheet" href="css/form.css" />
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.2.0/ng-tags-input.min.js"></script>
+	
+	
+<script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+    <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
+ 
+
 <div ng-controller="clienteDetalheController">
 
 	<div class="form-style-8">
@@ -24,6 +35,11 @@
 				<label class="control-label" for="Email">Email:
 					{{cliente.email}}</label>
 			</div>
+			<div class="tag">
+			<tags-input ng-model="tags">
+			<auto-complete source="loadTags($query)"></auto-complete>
+			</tags-input>
+    		</div>
 
 		</form>
 	</div>
